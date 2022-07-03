@@ -85,7 +85,7 @@ class DataSource: ObservableObject {
 
 struct ContentView: View {
     @StateObject var dataSource = DataSource()
-    
+
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
     }
@@ -97,9 +97,8 @@ struct ContentView: View {
                     List {
                         ForEach(dataSource.days) { it in
                             Section(it.date.formatted(date: .complete, time: .omitted)) {
-                                ForEach(it.entries) { e in
-                                    EntryCell(entry: .constant(e))
-                                }
+                                TimelineVertical(entries: it.entries)
+                                    .padding(.top, 15)
                             }
                             .task {
                                 await dataSource.proxiedLoadContent(currentItem: it)
@@ -108,7 +107,7 @@ struct ContentView: View {
                         if dataSource.isLoading {
                             VStack(alignment: .center) {
                                 ProgressView()
-                                Text("Ładowanie kolejnego tydodnia")
+                                Text("Loading next week...")
                                     .italic()
                             }.frame(maxWidth: .infinity)
                         }
@@ -118,16 +117,19 @@ struct ContentView: View {
                     List {
                         ForEach(dataSource.days) { it in
                             Section(it.date.formatted(date: .abbreviated, time: .omitted)) {
-                                ForEach(it.entries) { e in
-                                    EntryCell(entry: .constant(e))
-                                }
-                                if dataSource.isLoading {
-                                    ProgressView()
-                                }
+                                TimelineVertical(entries: it.entries)
+                                    .padding(.top, 15)
                             }
                             .task {
                                 await dataSource.proxiedLoadContent(currentItem: it)
                             }
+                        }
+                        if dataSource.isLoading {
+                            VStack(alignment: .center) {
+                                ProgressView()
+                                Text("Loading next week...")
+                                    .italic()
+                            }.frame(maxWidth: .infinity)
                         }
                     }
                 }
@@ -151,20 +153,9 @@ struct ContentView: View {
             }.tabItem {
                 Label("Infnite book", systemImage: "book")
             }
-            VStack {
-                ScrollView {
-                    TimelineVertical(count: 8, beginTime: Date(detectFromString: "2022-07-03T14:00:00")!, entries: [mockable])
-                        .padding(.vertical)
-                        .background(.secondary.opacity(0.3))
-                        .cornerRadius(10)
-                }
-            }.tabItem {
-                Label("aaaaa", image: "jebacsmyka")
-            }
         }.task {
             await dataSource.proxiedLoadContent(currentItem: nil)
         }
-        
     }
 }
 
