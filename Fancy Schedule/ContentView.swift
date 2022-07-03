@@ -138,7 +138,7 @@ struct ContentView: View {
                 TabView {
                     ForEach(dataSource.days) { it in
                         VStack {
-                            Text(it.date.formatted(date: .complete, time: .omitted))
+                            Text(it.date.formatted(date: .complete, time: .omitted)).font(.title2)
                             List(it.entries) {
                                 EntryCell(entry: .constant($0))
                             }.task {
@@ -151,9 +151,20 @@ struct ContentView: View {
             }.tabItem {
                 Label("Infnite book", systemImage: "book")
             }
+            VStack {
+                ScrollView {
+                    TimelineVertical(count: 8, beginTime: Date(detectFromString: "2022-07-03T14:00:00")!, entries: [mockable])
+                        .padding(.vertical)
+                        .background(.secondary.opacity(0.3))
+                        .cornerRadius(10)
+                }
+            }.tabItem {
+                Label("aaaaa", image: "jebacsmyka")
+            }
         }.task {
             await dataSource.proxiedLoadContent(currentItem: nil)
         }
+        
     }
 }
 

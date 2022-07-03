@@ -10,6 +10,7 @@
 		612156E0287061C70041EB2B /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 612156DF287061C70041EB2B /* DateHelper */; };
 		61A581F9287185900091FAA1 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A581F8287185900091FAA1 /* EntryCell.swift */; };
 		61A581FB287186E90091FAA1 /* Altapi+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A581FA287186E90091FAA1 /* Altapi+Extensions.swift */; };
+		61A581FD28719D760091FAA1 /* TimelineVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A581FC28719D760091FAA1 /* TimelineVertical.swift */; };
 		61AADE9F286A46F40053A302 /* Fancy_ScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AADE9E286A46F40053A302 /* Fancy_ScheduleApp.swift */; };
 		61AADEA1286A46F40053A302 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AADEA0286A46F40053A302 /* ContentView.swift */; };
 		61AADEA3286A46F50053A302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61AADEA2286A46F50053A302 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		61A581F8287185900091FAA1 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		61A581FA287186E90091FAA1 /* Altapi+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Altapi+Extensions.swift"; sourceTree = "<group>"; };
+		61A581FC28719D760091FAA1 /* TimelineVertical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineVertical.swift; sourceTree = "<group>"; };
 		61AADE9B286A46F40053A302 /* Fancy Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fancy Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AADE9E286A46F40053A302 /* Fancy_ScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fancy_ScheduleApp.swift; sourceTree = "<group>"; };
 		61AADEA0286A46F40053A302 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				61AADEA4286A46F50053A302 /* Preview Content */,
 				61A581F8287185900091FAA1 /* EntryCell.swift */,
 				61A581FA287186E90091FAA1 /* Altapi+Extensions.swift */,
+				61A581FC28719D760091FAA1 /* TimelineVertical.swift */,
 			);
 			path = "Fancy Schedule";
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				61AADEA1286A46F40053A302 /* ContentView.swift in Sources */,
 				61A581F9287185900091FAA1 /* EntryCell.swift in Sources */,
 				61AADE9F286A46F40053A302 /* Fancy_ScheduleApp.swift in Sources */,
+				61A581FD28719D760091FAA1 /* TimelineVertical.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
