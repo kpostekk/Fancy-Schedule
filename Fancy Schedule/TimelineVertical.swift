@@ -80,7 +80,7 @@ struct TimelineVertical: View {
                 }
                 // DO NOT FUCKING TOUCH THIS
                 /* PLEASE NO */ Spacer() // DO NOT FUCKING REMOVE THIS SPACER GOD PLEASE NO
-                // DO NOT EVEN TRY TO PISS ME OFF
+                // If you will remove this spacer, I will remove you too (with -Rf)
             }
             
             // MARK: Entires
